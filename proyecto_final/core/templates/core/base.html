@@ -20,7 +20,10 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="{% url 'index' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'mostrar_futbol' %}">Mostrar</a>
+                <a class="navbar-brand" href="{% url 'editar_futbol' %}">Editar</a>
+                <a class="navbar-brand" href="{% url 'agregar_futbol' %}">Agregar</a>
                 <a class="btn btn-primary" href="#signup">Sign Up</a>
             </div>
         </nav>
