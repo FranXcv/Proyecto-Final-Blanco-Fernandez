@@ -47,6 +47,11 @@ def eliminar_futbol(request, id_futbol):
     futbol.delete() 
     return render(request, "core/eliminar_futbol.html", {"nombre_eliminado": name})
 
+def leerFutbol(request):
+    futbol = Futbol.objects.all()
+    contexto = {"futbol":futbol}
+    return render(request, "core/leerfutbol.html", contexto )
+
 
 
 def login_request(request):
