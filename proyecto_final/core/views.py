@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from core.models import Futbol, Arbitros, Mensaje
 from core.forms import FutbolForm, UserRegisterForm, ArbitrosForm, MensajeForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
@@ -117,9 +117,9 @@ def agregar_arbitro(request):
         arbitro_form = ArbitrosForm(request.POST)
         if arbitro_form.is_valid():
             data = arbitro_form.cleaned_data
-            arbitro = Arbitros(nombre=data["nombre"], apellido=data["apellido"], edad=data["edad"], rol=data["rol"])
+            arbitro = Arbitros(nombre=data["nombre"],apellido=data["apellido"],edad=data["edad"],rol=data["rol"])
             arbitro.save()
-            return redirect(reverse(request, "core/base.html"))
+            return render(request, "core/base.html")
         arbitro_form = ArbitrosForm()
         return render(request, "core/agregar_arbitros.html", {"form": arbitro_form})
 
@@ -162,4 +162,5 @@ def mensajes(request):
             form = MensajeForm()
 
     return render(request, "core/mensajes.html", {'mensajes': mensajes, 'form': form}) 
+#----------------------------------------------------------------------------------------------------------------------------
 
