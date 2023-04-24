@@ -22,6 +22,8 @@
             <td>{{futbol.nro_equipos}}</td>
             <td><a href="{% url 'eliminar_futbol' futbol.id %}">Eliminar</a></td>
             <td><a href="{% url 'editar_futbol' id_futbol %}">Editar</a></td>
+            <td><a href="{% url 'agregar_futbol' %}">Agregar</a></td>
+
         </tr>
     {% endfor %} 
 

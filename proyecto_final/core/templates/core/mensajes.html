@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block contenido_central %}
+  <h2>Mensajes</h2>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Publicar</button>
+  </form>
+
+  <hr>
+
+
+    <div class="mensaje">
+      <p><strong>{{ mensaje.autor }}:</strong> {{ mensaje.texto }}</p>
+      <small>{{ mensaje.fecha }}</small>
+    </div>
+
+    <p>No hay mensajes todavía.</p>
+
+{% endblock %}

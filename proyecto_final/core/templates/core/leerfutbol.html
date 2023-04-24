@@ -12,11 +12,12 @@
     <button>
         <a href="{% url 'eliminar_futbol' p.id %}">Eliminar </a>
         <a href="{% url 'editar_futbol' p.id %}">Editar</a>
+        
     </button>
     <br>
     {% endfor %}
 </ul>
 <p>
-    <a href="FormularioFutbol">Agregar</a>
+    <a href="{% url 'agregar_futbol' %}">Agregar</a>
 </p>
 {% endblock %}

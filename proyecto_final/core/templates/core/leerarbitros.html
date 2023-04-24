@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% load static %} 
+
+{% block contenido_central %}
+
+<h1>Arbitros habilitados para dirigir</h1>
+    
+<ul>
+    {% for p in arbitros %} 
+    <li>{{p}}</li>
+    <button>
+        <a href="{% url 'eliminar_arbitros' p.id %}">Eliminar</a>
+    </button>
+    <br>
+    {% endfor %}
+</ul>
+<p>
+    <a href="{% url 'agregar_arbitro' %}">Agregar</a>
+</p>
+{% endblock %}
